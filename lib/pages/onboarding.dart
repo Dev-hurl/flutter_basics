@@ -50,7 +50,9 @@ class OnboardingPage extends StatelessWidget {
               //Subtitle
               Text(
                 "Locate relaiable EV Stations instantly and enjoy a seamless charging experience from start to finish. ",
-                style: TextStyle(fontSize: 16, color: Colors.black54),
+                style: TextStyle(
+                  fontSize: 16, 
+                  color: Colors.black54),
               ),
           
               SizedBox(height: 40,),
