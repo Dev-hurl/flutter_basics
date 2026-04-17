@@ -40,6 +40,7 @@ class ApplicationBar extends StatelessWidget {
         child: Padding(
           padding: EdgeInsets.all(16.0),
           child: Column(
+            crossAxisAlignment:CrossAxisAlignment.center,
             children: [
               Text(
                 'This is the body of the application.',
