@@ -35,7 +35,7 @@ class OnboardingPage extends StatelessWidget {
                   children: [
                     TextSpan(text: "CHARGE"),
                     TextSpan(
-                      text: " SMARTER. \n",
+                      text: " SMARTER.",
                       style: TextStyle(color: Colors.green),
                     ),
                     TextSpan(text: "DRIVE "),
