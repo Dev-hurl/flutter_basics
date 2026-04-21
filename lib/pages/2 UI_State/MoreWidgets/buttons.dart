@@ -53,6 +53,44 @@ class _ButtonsState extends State<Buttons> {
               icon: Icon(Icons.add),
               color: Colors.green,
             ),
+            SizedBox(height: 24),
+            Row(
+              children: [
+                Container(
+                  alignment: Alignment.center,
+                  width: 95,
+                  height: 34,
+                  padding: EdgeInsets.all(8),
+                  child: OutlinedButton(
+                    onPressed: () {
+                      //function
+                    },
+                    onHover: (value) {
+                      //function
+                    },
+                    onLongPress: () {
+                      //function
+                    },
+                    child: Icon(
+                      Icons.arrow_circle_up_rounded,
+                      color: Colors.deepOrangeAccent,
+                    ),
+                    
+                  ),
+                ),
+                SizedBox(height: 24),
+
+                OutlinedButton(
+                  onPressed: () {
+                    //function
+                  },
+                  child: Icon(
+                    Icons.arrow_circle_down_rounded,
+                    color: Colors.deepOrangeAccent,
+                  ),
+                ),
+              ],
+            ),
           ],
         ),
       ),
