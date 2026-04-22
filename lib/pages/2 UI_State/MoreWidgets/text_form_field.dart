@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+//import 'package:flutter_basics/pages/3%20Advanced_UI_Architecture/Custom%20widgets/custom_textffield.dart';
 import 'package:flutter_svg/svg.dart';
 
 class TextFormFieldWidget extends StatefulWidget {
@@ -127,43 +128,14 @@ class _TextFormFieldWidgetState extends State<TextFormFieldWidget> {
                           ),
                         ),
                         //Password
-                        TextFormField(
-                          controller: _passwordController,
-                          //focusNode: FocusNode(),
-                          decoration: InputDecoration(
-                            prefixIcon: Icon(Icons.lock),
-                            prefixIconColor: Colors.deepOrange,
-                            labelText: 'Password',
-                            labelStyle: TextStyle(
-                              color: Colors.black87,
-                              fontSize: 12,
-                              fontWeight: FontWeight.normal,
-                            ),
-                            hintText: 'Enter Your Password',
-                            hintStyle: TextStyle(
-                              color: Colors.grey,
-                              fontSize: 12,
-                              fontWeight: FontWeight.normal,
-                            ),
-                            enabledBorder: OutlineInputBorder(
-                              borderRadius: BorderRadius.circular(8),
-                              borderSide: BorderSide(
-                                width: 1,
-                                color: Colors.grey,
-                              ),
-                            ),
-                            focusedBorder: OutlineInputBorder(
-                              borderRadius: BorderRadius.circular(8),
-                              borderSide: BorderSide(
-                                width: 1,
-                                color: Colors.deepOrange,
-                              ),
-                            ),
-                          ),
-                        ),
+                        /*CustomTextFFieldWidget(
+                          passwordController: _passwordController,
+                        ),*/
                         //Password
                         TextFormField(
                           controller: _confirmPasswordController,
+                          obscureText: isObscure,
+                          obscuringCharacter: "*",
                           //focusNode: FocusNode(),
                           decoration: InputDecoration(
                             prefixIcon: Icon(Icons.lock),
@@ -237,7 +209,6 @@ class _TextFormFieldWidgetState extends State<TextFormFieldWidget> {
                                   backgroundColor: WidgetStatePropertyAll(
                                     Colors.deepOrange,
                                   ),
-                                  
                                 ),
                                 child: Text(
                                   'Login',
@@ -249,34 +220,35 @@ class _TextFormFieldWidgetState extends State<TextFormFieldWidget> {
                               ),
                             ),
                             SizedBox(
-                          width: double.infinity,
-                          height: 48,
-                          child: OutlinedButton(
-                            onPressed: () {
-                              //Continue As a guest
-                            },
-                            style: ButtonStyle(
-                              side: WidgetStatePropertyAll(
-                                BorderSide(color: Colors.deepOrange, width: 2),
+                              width: double.infinity,
+                              height: 48,
+                              child: OutlinedButton(
+                                onPressed: () {
+                                  //Continue As a guest
+                                },
+                                style: ButtonStyle(
+                                  side: WidgetStatePropertyAll(
+                                    BorderSide(
+                                      color: Colors.deepOrange,
+                                      width: 2,
+                                    ),
+                                  ),
+                                ),
+                                child: Text(
+                                  'Continue as a Guest',
+                                  style: TextStyle(
+                                    fontWeight: FontWeight.w700,
+                                    color: Colors.deepOrange,
+                                  ),
+                                ),
                               ),
                             ),
-                            child: Text(
-                              'Continue as a Guest',
-                              style: TextStyle(
-                                fontWeight: FontWeight.w700,
-                                color: Colors.deepOrange,
-                              ),
-                            ),
-                          ),
-                        ),
                           ],
                         ),
                         //SizedBox(height:12),
                         Text(
                           'Or',
-                          style: TextStyle(
-                            fontWeight: FontWeight.w700,
-                          ),
+                          style: TextStyle(fontWeight: FontWeight.w700),
                         ),
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -286,9 +258,12 @@ class _TextFormFieldWidgetState extends State<TextFormFieldWidget> {
                               width: 48,
                               height: 48,
                               decoration: BoxDecoration(
-                                color: Colors.white.withValues(alpha:0.4),
+                                color: Colors.white.withValues(alpha: 0.4),
                                 borderRadius: BorderRadius.circular(12),
-
+                                border: Border.all(
+                                  color: Colors.white,
+                                  width: 3,
+                                ),
                               ),
                               child: SvgPicture.asset(
                                 'assets/icons/facebook.svg',
@@ -301,9 +276,12 @@ class _TextFormFieldWidgetState extends State<TextFormFieldWidget> {
                               width: 48,
                               height: 48,
                               decoration: BoxDecoration(
-                                color: Colors.white.withValues(alpha:0.4),
+                                color: Colors.white.withValues(alpha: 0.4),
                                 borderRadius: BorderRadius.circular(12),
-
+                                border: Border.all(
+                                  color: Colors.white,
+                                  width: 3,
+                                ),
                               ),
                               child: SvgPicture.asset(
                                 'assets/icons/apple.svg',
@@ -316,9 +294,12 @@ class _TextFormFieldWidgetState extends State<TextFormFieldWidget> {
                               width: 48,
                               height: 48,
                               decoration: BoxDecoration(
-                                color: Colors.white.withValues(alpha:0.4),
+                                color: Colors.white.withValues(alpha: 0.4),
                                 borderRadius: BorderRadius.circular(12),
-
+                                border: Border.all(
+                                  color: Colors.white,
+                                  width: 3,
+                                ),
                               ),
                               child: SvgPicture.asset(
                                 'assets/icons/Google.svg',
@@ -327,7 +308,7 @@ class _TextFormFieldWidgetState extends State<TextFormFieldWidget> {
                               ),
                             ),
                           ],
-                        )
+                        ),
                       ],
                     ),
                   ),
