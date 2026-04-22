@@ -43,15 +43,11 @@ class _ToolTipSnackBarState extends State<ToolTipSnackBar> {
                   style: TextStyle(fontWeight: FontWeight.w700),
                 ),
               ),
-              Tooltip(
-                message: "Remember to press the button",
-                constraints:BoxConstraints(
-                  minHeight: 100,
-                  maxHeight: 200,
-                  minWidth: double.maxFinite,
-                  maxWidth: double.infinity,
-                ),
-              )
+              IconButton(onPressed: (){
+                //
+              }, icon: Icon(Icons.question_mark_rounded),
+              tooltip: 'Remember to press the button',
+              ),
             ],
           ),
         ),
