@@ -5,9 +5,9 @@ class Onboard1 extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: Colors.orange[100],
-      body: Padding(
+    return Container(
+      color: Colors.orange[100],
+      child: Padding(
         padding: const EdgeInsets.all(40.0),
         child: Center(
           child: Column(

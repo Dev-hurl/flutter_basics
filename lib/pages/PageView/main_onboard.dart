@@ -4,17 +4,18 @@ import 'package:flutter_basics/pages/PageView/onboard2.dart';
 import 'package:flutter_basics/pages/PageView/onboard3.dart';
 
 class MainOnboard extends StatefulWidget {
-  const MainOnboard ({super.key});
+  const MainOnboard({super.key});
 
   @override
   State<MainOnboard> createState() => _MainOnboardState();
 }
 
 class _MainOnboardState extends State<MainOnboard> {
+  int currentPage = 0;
   late PageController _pageController;
 
   @override
-  void initState(){
+  void initState() {
     super.initState();
     _pageController = PageController();
   }
@@ -24,7 +25,6 @@ class _MainOnboardState extends State<MainOnboard> {
     _pageController.dispose();
     super.dispose();
   }
-  
 
   @override
   Widget build(BuildContext context) {
@@ -35,20 +35,23 @@ class _MainOnboardState extends State<MainOnboard> {
         child: Center(
           child: Column(
             children: [
-              Container(
-                width: double.infinity,
-                height: 500,
-                padding: EdgeInsets.all(30),
-                color: Colors.deepOrange[400],
-              ),
-              PageView(
-                scrollDirection: Axis.horizontal,
-                controller: _pageController,
-                children: [
-                  Onboard1(),
-                  Onboard2(),
-                  Onboard3(),
-                ],
+              Expanded(
+                child: PageView(
+                  scrollDirection: Axis.horizontal,
+                  controller: _pageController,
+                  
+                  onPageChanged: (index) {
+                    setState(() {
+                      currentPage = index;
+                    });
+                  },
+                  children: [
+                    Onboard1(), 
+                    onboard2(), 
+                    onboard3()
+                  ],
+                  
+                ),
               ),
             ],
           ),
