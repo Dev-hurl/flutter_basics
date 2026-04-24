@@ -43,10 +43,13 @@ class _ToolTipSnackBarState extends State<ToolTipSnackBar> {
                   style: TextStyle(fontWeight: FontWeight.w700),
                 ),
               ),
-              IconButton(onPressed: (){
-                //
-              }, icon: Icon(Icons.question_mark_rounded),
-              tooltip: 'Remember to press the button',
+              Tooltip(
+                verticalOffset: -10,
+                message: 'Type a message to be displayed in the snackbar',
+                child: IconButton(onPressed: (){
+                  //
+                }, icon: Icon(Icons.question_mark_rounded),
+                ),
               ),
             ],
           ),

@@ -12,10 +12,11 @@ class TextFormFieldWidget extends StatefulWidget {
 class _TextFormFieldWidgetState extends State<TextFormFieldWidget> {
   final TextEditingController _emailController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
-  final TextEditingController _confirmPasswordController =
-      TextEditingController();
+  final TextEditingController _confirmPasswordController = TextEditingController();
 
   FocusNode ofOne = FocusNode();
+  FocusNode ofTwo = FocusNode();
+  FocusNode ofThree = FocusNode();
 
   @override
   void dispose() {
@@ -85,7 +86,7 @@ class _TextFormFieldWidgetState extends State<TextFormFieldWidget> {
                         //textFormfield
                         TextFormField(
                           controller: _emailController,
-                          //focusNode: FocusNode(),
+                          focusNode: ofOne,
                           decoration: InputDecoration(
                             filled: true,
                             fillColor: Color(0xFFF5F5F5),
@@ -136,7 +137,7 @@ class _TextFormFieldWidgetState extends State<TextFormFieldWidget> {
                           controller: _confirmPasswordController,
                           obscureText: isObscure,
                           obscuringCharacter: "*",
-                          //focusNode: FocusNode(),
+                          focusNode: ofThree,
                           decoration: InputDecoration(
                             prefixIcon: Icon(Icons.lock),
                             prefixIconColor: Colors.deepOrange,
