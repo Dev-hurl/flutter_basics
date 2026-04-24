@@ -1,4 +1,4 @@
-/*import 'package:flutter/material.dart';
+import 'package:flutter/material.dart';
 
 class BottomSheetWidget extends StatelessWidget {
   const BottomSheetWidget({super.key});
@@ -12,11 +12,13 @@ class BottomSheetWidget extends StatelessWidget {
           onPressed: () {
             showBottomSheet(context: context, builder: (context){
               return BottomSheet(
-                showDragHandle: true,
-                dragHandleColor: CO,
-                onClosing: onClosing, 
-                builder: ;
-                );
+                onClosing: () {
+                  //
+                },
+                builder: (context) {
+                  //
+                },
+              );
             });
           },
           child: Text('Open Bottom Sheet'),
@@ -24,4 +26,4 @@ class BottomSheetWidget extends StatelessWidget {
       ),
     );
   }
-}*/
+}
