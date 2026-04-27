@@ -47,8 +47,8 @@ class _MainOnboardState extends State<MainOnboard> {
                   },
                   children: [
                     Onboard1(), 
-                    onboard2(), 
-                    onboard3()
+                    Onboard2(), 
+                    Onboard3()
                   ],
                   
                 ),
