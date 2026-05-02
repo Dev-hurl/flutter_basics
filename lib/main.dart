@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_basics/pages/PageView/main_onboard.dart';
+import 'package:flutter_basics/pages/2%20UI/MoreWidgets/toggle_button.dart';
 
 void main() {
   runApp(const MyApp());
@@ -14,7 +14,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       //title: 'Learning Flutter Basics',
-      home: const MainOnboard(),
+      home: const ToggleButton(),
     );
   }
 }

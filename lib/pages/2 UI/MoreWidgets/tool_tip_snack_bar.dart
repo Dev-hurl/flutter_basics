@@ -20,21 +20,18 @@ class _ToolTipSnackBarState extends State<ToolTipSnackBar> {
             mainAxisAlignment: MainAxisAlignment.center,
             spacing: 24,
             children: [
-              TextField(
-                controller: _snackBarController,
-                cursorWidth: 2,
-                showCursor: true,
-                cursorRadius: Radius.circular(12),
-              ),
+              TextField(controller: _snackBarController),
               OutlinedButton(
                 onPressed: () {
                   ScaffoldMessenger.of(context).showSnackBar(
                     SnackBar(
                       content: Text(_snackBarController.text),
                       action: SnackBarAction(
-                        label: 'Undo' , onPressed: (){
-                        //
-                      }),
+                        label: 'Undo',
+                        onPressed: () {
+                          //
+                        },
+                      ),
                     ),
                   );
                 },
@@ -46,9 +43,11 @@ class _ToolTipSnackBarState extends State<ToolTipSnackBar> {
               Tooltip(
                 verticalOffset: -10,
                 message: 'Type a message to be displayed in the snackbar',
-                child: IconButton(onPressed: (){
-                  //
-                }, icon: Icon(Icons.question_mark_rounded),
+                child: IconButton(
+                  onPressed: () {
+                    //
+                  },
+                  icon: Icon(Icons.question_mark_rounded),
                 ),
               ),
             ],
