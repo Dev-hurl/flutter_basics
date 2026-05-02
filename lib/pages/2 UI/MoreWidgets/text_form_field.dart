@@ -45,7 +45,6 @@ class _TextFormFieldWidgetState extends State<TextFormFieldWidget> {
             padding: const EdgeInsets.all(16.0),
             child: SingleChildScrollView(
               child: Column(
-                //mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Container(
                     alignment: Alignment.center,

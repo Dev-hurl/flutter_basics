@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_basics/pages/PageView/onboard1.dart';
 import 'package:flutter_basics/pages/PageView/onboard2.dart';
 import 'package:flutter_basics/pages/PageView/onboard3.dart';
+import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 class MainOnboard extends StatefulWidget {
   const MainOnboard({super.key});
@@ -29,9 +30,13 @@ class _MainOnboardState extends State<MainOnboard> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        centerTitle: true,
+        title: Text('Page View'),
+      ),
       backgroundColor: Colors.orange[100],
       body: Padding(
-        padding: const EdgeInsets.all(40.0),
+        padding: const EdgeInsets.all(40),
         child: Center(
           child: Column(
             children: [
@@ -53,6 +58,19 @@ class _MainOnboardState extends State<MainOnboard> {
                   
                 ),
               ),
+              //dot indicators
+              SmoothPageIndicator(
+                controller: _pageController,
+                count: 3,
+                effect: ExpandingDotsEffect(
+                  activeDotColor: Colors.deepOrange,
+                  dotColor: Colors.grey[100],
+                  dotHeight: 14,
+                  dotWidth: 14,
+                  spacing: 16,
+                  expansionFactor: 2,
+                ),
+              )
             ],
           ),
         ),

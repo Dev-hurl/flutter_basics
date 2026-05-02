@@ -12,11 +12,24 @@ class Onboard2 extends StatelessWidget {
         child: Center(
           child: Column(
             children: [
-              Container(
-                width: double.infinity,
-                height: 500,
-                padding: EdgeInsets.all(30),
-                color: Colors.deepOrange[400],
+              ClipRRect(
+                borderRadius:BorderRadiusGeometry.circular(24) ,
+                child: Container(
+                  alignment: Alignment.center,
+                  width: double.infinity,
+                  height: 400,
+                  padding: EdgeInsets.all(30),
+                  color: Colors.deepOrange[400],
+                  child: Text(
+                    'Page 2',
+                    style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontSize: 16,
+                      color: Colors.white,
+                    ),
+                    textAlign: TextAlign.center,
+                  ),
+                ),
               ),
             ],
           ),
