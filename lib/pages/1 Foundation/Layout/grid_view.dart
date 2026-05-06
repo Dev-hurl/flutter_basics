@@ -47,7 +47,7 @@ class GridsView extends StatelessWidget {
 Widget myBox(int index){
   return Container(
     //margin: EdgeInsets.all(8),
-    color: Colors.deepOrangeAccent,
+    color: Colors.deepOrange,
     alignment: Alignment.center,
     child: Text('$index'),
   );
