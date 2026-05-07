@@ -15,7 +15,7 @@ class ListsView extends StatelessWidget {
             Container(
               margin: EdgeInsets.symmetric(horizontal: 16, vertical: 8),
               width: 200,
-              height: 200,
+              height: 250,
               decoration: BoxDecoration(
                 color: const Color.fromARGB(255, 133, 200, 255),
               ),

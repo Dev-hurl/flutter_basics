@@ -30,7 +30,6 @@ class _AlertDialogWidgetState extends State<AlertDialogWidget> {
                 return AlertDialog(
                   titlePadding: EdgeInsets.all(12),
                   contentPadding: EdgeInsets.all(12),
-                  //icon: Icon(Icons.lightbulb_circle_rounded),
                   title: Text('Alert Dialog',
                   textAlign: TextAlign.start,
                   style: TextStyle(

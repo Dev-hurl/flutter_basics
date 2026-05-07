@@ -34,6 +34,7 @@ dependencies:
   flutter_svg: ^2.2.4
   hugeicons: ^1.1.6
   smooth_page_indicator: ^2.0.1
+  carousel_slider: ^5.1.2
 
 dev_dependencies:
   badges: ^3.2.0

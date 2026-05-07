@@ -113,6 +113,8 @@ class StackPositioned extends StatelessWidget {
                   ),
                 ],
               ),
+              SizedBox(height: 24),
+              //3rd stack
             ],
           ),
         ),
