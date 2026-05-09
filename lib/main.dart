@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_basics/pages/1%20Foundation/Layout/carousel.dart';
-import 'package:flutter_basics/pages/1%20Foundation/Layout/stack_positioned.dart';
 void main() {
   runApp(const MyApp());
 }

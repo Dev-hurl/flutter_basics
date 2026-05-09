@@ -115,6 +115,20 @@ class StackPositioned extends StatelessWidget {
               ),
               SizedBox(height: 24),
               //3rd stack
+              Stack(
+                children: [
+                  SizedBox(
+                    height: 400,
+                    width: double.infinity,
+                    child: Text(
+                      'New Arrivals',
+                      style: TextStyle(
+                        fontWeight: FontWeight.w300,
+                      ),
+                    )
+                  )
+                ],
+              )
             ],
           ),
         ),
