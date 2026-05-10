@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_basics/pages/1%20Foundation/Layout/carousel.dart';
+import 'package:flutter_basics/pages/2%20UI/MoreWidgets/tool_tip_snack_bar.dart';
 void main() {
   runApp(const MyApp());
 }
@@ -13,7 +13,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       //title: 'Learning Flutter Basics',
-      home: const CarouselWidget(),
+      home: const ToolTipSnackBar(),
     );
   }
 }

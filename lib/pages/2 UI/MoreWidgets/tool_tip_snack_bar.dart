@@ -20,12 +20,17 @@ class _ToolTipSnackBarState extends State<ToolTipSnackBar> {
             mainAxisAlignment: MainAxisAlignment.center,
             spacing: 24,
             children: [
-              TextField(controller: _snackBarController),
+              TextField(
+                controller: _snackBarController,
+                keyboardType: TextInputType.text,
+              ),
               OutlinedButton(
                 onPressed: () {
                   ScaffoldMessenger.of(context).showSnackBar(
                     SnackBar(
                       content: Text(_snackBarController.text),
+                      behavior: SnackBarBehavior.floating,
+                      width: 150,
                       action: SnackBarAction(
                         label: 'Undo',
                         onPressed: () {

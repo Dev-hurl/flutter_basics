@@ -37,9 +37,7 @@ class ListsView extends StatelessWidget {
                     width: 100,
                     height: 100,
                     margin: EdgeInsets.all(16),
-                    decoration: BoxDecoration(
-                      color: Colors.green,
-                    ),
+                    decoration: BoxDecoration(color: Colors.green),
                     child: Center(
                       child: Text(
                         '${index + 1}',
@@ -74,9 +72,7 @@ class ListsView extends StatelessWidget {
                     width: 100,
                     height: 100,
                     margin: EdgeInsets.all(8),
-                    decoration: BoxDecoration(
-                      color: Colors.green,
-                    ),
+                    decoration: BoxDecoration(color: Colors.green),
                     child: Center(
                       child: Text(
                         '${index + 1}',

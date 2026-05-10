@@ -9,13 +9,11 @@ class Badgee extends StatefulWidget {
 
 class _BadgeeState extends State<Badgee> {
   int badgeCount = 0;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        centerTitle: true,
-        title: Text('B A D G E'),
-      ),
+      appBar: AppBar(centerTitle: true, title: Text('B A D G E')),
       body: Center(
         child: Column(
           spacing: 24,
@@ -25,32 +23,26 @@ class _BadgeeState extends State<Badgee> {
               count: badgeCount,
               alignment: Alignment.topRight,
               padding: EdgeInsets.all(4),
-              isLabelVisible: true,
+              //isLabelVisible: true,
               backgroundColor: Colors.deepOrange,
               textColor: Colors.white,
-              textStyle: TextStyle(
-                fontSize: 12,
-                fontWeight: FontWeight.w700,
-              ),
-              child: Icon(
-                Icons.mail_rounded,
-                size: 48,
+              textStyle: TextStyle(fontSize: 12, fontWeight: FontWeight.w700),
+              child: Icon(Icons.shopping_cart_rounded, size: 48),
+            ),
+            OutlinedButton(
+              onPressed: () {
+                setState(() {
+                  badgeCount++;
+                });
+              },
+              child: Text(
+                'Increase Count',
+                style: TextStyle(fontWeight: FontWeight.w700),
               ),
             ),
-            OutlinedButton(onPressed: (){
-              setState(() {
-                badgeCount++;
-              });
-            }, 
-            child: Text(
-              'Increase Count',
-              style: TextStyle(
-                fontWeight: FontWeight.w700,
-              ),
-            ))
           ],
         ),
-      )
+      ),
     );
   }
 }
