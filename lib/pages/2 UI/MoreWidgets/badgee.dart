@@ -40,6 +40,17 @@ class _BadgeeState extends State<Badgee> {
                 style: TextStyle(fontWeight: FontWeight.w700),
               ),
             ),
+            OutlinedButton(
+              onPressed: () {
+                setState(() {
+                  badgeCount--;
+                });
+              },
+              child: Text(
+                'Reduce Count',
+                style: TextStyle(fontWeight: FontWeight.w700),
+              ),
+            ),
           ],
         ),
       ),
