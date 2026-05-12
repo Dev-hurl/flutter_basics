@@ -46,7 +46,7 @@ class _ToolTipSnackBarState extends State<ToolTipSnackBar> {
                 ),
               ),
               Tooltip(
-                verticalOffset: -10,
+                verticalOffset: -50,
                 message: 'Type a message to be displayed in the snackbar',
                 child: IconButton(
                   onPressed: () {
