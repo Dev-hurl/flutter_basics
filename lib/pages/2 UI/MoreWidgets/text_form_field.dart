@@ -12,8 +12,9 @@ class TextFormFieldWidget extends StatefulWidget {
 class _TextFormFieldWidgetState extends State<TextFormFieldWidget> {
   final TextEditingController _emailController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
-  final TextEditingController _confirmPasswordController = TextEditingController();
-  //final formKey
+  final TextEditingController _confirmPasswordController =
+      TextEditingController();
+  final formKey = GlobalKey<FormState>();
 
   FocusNode ofOne = FocusNode();
   FocusNode ofTwo = FocusNode();
@@ -46,13 +47,16 @@ class _TextFormFieldWidgetState extends State<TextFormFieldWidget> {
             padding: const EdgeInsets.all(16.0),
             child: SingleChildScrollView(
               child: Form(
-                key: GlobalKey(),
+                key: formKey,
                 child: Column(
                   children: [
                     Container(
                       alignment: Alignment.center,
                       width: double.infinity,
-                      padding: EdgeInsets.symmetric(horizontal: 12, vertical: 40),
+                      padding: EdgeInsets.symmetric(
+                        horizontal: 12,
+                        vertical: 40,
+                      ),
                       decoration: BoxDecoration(
                         color: Color(
                           0xFFFAFAFA,
@@ -177,7 +181,10 @@ class _TextFormFieldWidgetState extends State<TextFormFieldWidget> {
                               Row(
                                 spacing: 4,
                                 children: [
-                                  Icon(Icons.check_box, color: Colors.deepOrange),
+                                  Icon(
+                                    Icons.check_box,
+                                    color: Colors.deepOrange,
+                                  ),
                                   Text(
                                     'Remember me',
                                     style: TextStyle(
