@@ -15,6 +15,8 @@ class _TimePickerWidgetState extends State<TimePickerWidget> {
       context: context,
       initialTime: TimeOfDay.now(),
       helpText: 'Check time',
+      cancelText: 'Discard',
+      confirmText: 'Save',
     ).then( (value) {
       setState(() {
         _timeOfDay = value!;

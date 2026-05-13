@@ -1,46 +1,32 @@
 import 'package:flutter/material.dart';
 
-class CustomTextFFieldWidget extends StatefulWidget {
-  const CustomTextFFieldWidget({
+class CustomTextField extends StatelessWidget {
+  final String hintText;
+  final IconData icon;
+  final bool obscureText;
+  final TextEditingController controller;
+  final TextInputType keyboardType;
+
+  const CustomTextField({
     super.key,
-    required TextEditingController passwordController,
-    required emailController,
-  }) : _passwordController = passwordController;
+    required this.hintText,
+    required this.icon,
+    required this.controller,
+    this.obscureText = false,
+    this.keyboardType = TextInputType.text,
+  });
 
-  final TextEditingController _passwordController;
-
-  @override
-  State<CustomTextFFieldWidget> createState() => _CustomTextFFieldWidgetState();
-}
-
-class _CustomTextFFieldWidgetState extends State<CustomTextFFieldWidget> {
   @override
   Widget build(BuildContext context) {
     return TextFormField(
-      controller: widget._passwordController,
-      //focusNode: FocusNode(),
+      controller: controller,
+      obscureText: obscureText,
+      keyboardType: keyboardType,
       decoration: InputDecoration(
-        prefixIcon: Icon(Icons.lock),
-        prefixIconColor: Colors.deepOrange,
-        labelText: 'Password',
-        labelStyle: TextStyle(
-          color: Colors.black87,
-          fontSize: 12,
-          fontWeight: FontWeight.normal,
-        ),
-        hintText: 'Enter Your Password',
-        hintStyle: TextStyle(
-          color: Colors.grey,
-          fontSize: 12,
-          fontWeight: FontWeight.normal,
-        ),
-        enabledBorder: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(8),
-          borderSide: BorderSide(width: 1, color: Colors.grey),
-        ),
-        focusedBorder: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(8),
-          borderSide: BorderSide(width: 1, color: Colors.deepOrange),
+        hintText: hintText,
+        prefixIcon: Icon(icon),
+        border: const OutlineInputBorder(
+          borderRadius: BorderRadius.all(Radius.circular(12)),
         ),
       ),
     );

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-//import 'package:flutter_basics/pages/3%20Advanced_UI_Architecture/Custom%20widgets/custom_textffield.dart';
+import 'package:flutter_basics/pages/2%20UI/Advanced%20UI/Custom%20widgets/custom_textffield.dart';
 import 'package:flutter_svg/svg.dart';
 
 class TextFormFieldWidget extends StatefulWidget {
@@ -10,25 +10,30 @@ class TextFormFieldWidget extends StatefulWidget {
 }
 
 class _TextFormFieldWidgetState extends State<TextFormFieldWidget> {
-  final TextEditingController _emailController = TextEditingController();
-  final TextEditingController _passwordController = TextEditingController();
-  final TextEditingController _confirmPasswordController =
-      TextEditingController();
+  late TextEditingController _nameController;
+  late TextEditingController _emailController;
+  late TextEditingController _passwordController;
+  late TextEditingController _confirmPasswordController;
+
   final formKey = GlobalKey<FormState>();
 
-  FocusNode ofOne = FocusNode();
-  FocusNode ofTwo = FocusNode();
-  FocusNode ofThree = FocusNode();
+  @override
+  void initState() {
+    super.initState();
+    _nameController = TextEditingController();
+    _emailController = TextEditingController();
+    _passwordController = TextEditingController();
+    _confirmPasswordController = TextEditingController();
+  }
 
   @override
   void dispose() {
+    _nameController.dispose();
     _emailController.dispose();
     _passwordController.dispose();
     _confirmPasswordController.dispose();
     super.dispose();
   }
-
-  bool isObscure = true;
 
   @override
   Widget build(BuildContext context) {
@@ -89,92 +94,21 @@ class _TextFormFieldWidgetState extends State<TextFormFieldWidget> {
                               ),
                             ],
                           ),
-                          //textFormfield
-                          TextFormField(
-                            controller: _emailController,
-                            focusNode: ofOne,
-                            decoration: InputDecoration(
-                              filled: true,
-                              fillColor: Color(0xFFF5F5F5),
-                              focusColor: Color(0xFFF5F5F5),
-                              prefixIcon: Icon(Icons.mail_rounded),
-                              prefixIconColor: Colors.deepOrange,
-                              labelText: 'Email',
-                              labelStyle: TextStyle(
-                                color: Colors.black87,
-                                fontSize: 12,
-                                fontWeight: FontWeight.normal,
-                              ),
-                              hintText: 'Enter your Email Address',
-                              hintStyle: TextStyle(
-                                color: Color(0xFF808080),
-                                fontSize: 12,
-                                fontWeight: FontWeight.normal,
-                              ),
-                              /*errorBorder: OutlineInputBorder(
-                                borderRadius: BorderRadius.circular(8),
-                                borderSide: BorderSide(
-                                  width: 1,
-                                  color: Colors.red,
-                                ),
-                              )*/
-                              enabledBorder: OutlineInputBorder(
-                                borderRadius: BorderRadius.circular(8),
-                                borderSide: BorderSide(
-                                  width: 1,
-                                  color: Color(0xFF808080),
-                                ),
-                              ),
-                              focusedBorder: OutlineInputBorder(
-                                borderRadius: BorderRadius.circular(8),
-                                borderSide: BorderSide(
-                                  width: 1,
-                                  color: Colors.deepOrange,
-                                ),
-                              ),
-                            ),
+                          //Name text field
+                          CustomTextField(
+                            controller: _nameController,
+                            hintText: 'Name',
+                            icon: Icons.person,
                           ),
-                          //Password
-                          /*CustomTextFFieldWidget(
-                            passwordController: _passwordController,
-                          ),*/
-                          //Password
-                          TextFormField(
-                            controller: _confirmPasswordController,
-                            obscureText: isObscure,
-                            obscuringCharacter: "*",
-                            focusNode: ofThree,
-                            decoration: InputDecoration(
-                              prefixIcon: Icon(Icons.lock),
-                              prefixIconColor: Colors.deepOrange,
-                              labelText: 'Confrim Password',
-                              labelStyle: TextStyle(
-                                color: Colors.black87,
-                                fontSize: 12,
-                                fontWeight: FontWeight.normal,
-                              ),
-                              hintText: 'Re-enter Your Password',
-                              hintStyle: TextStyle(
-                                color: Colors.grey,
-                                fontSize: 12,
-                                fontWeight: FontWeight.normal,
-                              ),
-                              enabledBorder: OutlineInputBorder(
-                                borderRadius: BorderRadius.circular(8),
-                                borderSide: BorderSide(
-                                  width: 1,
-                                  color: Colors.grey,
-                                ),
-                              ),
-                              focusedBorder: OutlineInputBorder(
-                                borderRadius: BorderRadius.circular(8),
-                                borderSide: BorderSide(
-                                  width: 1,
-                                  color: Colors.deepOrange,
-                                ),
-                              ),
-                            ),
-                          ),
+                          //Email text field
+                          /*CustomTextField(),
+                          //Password text field
+                          CustomTextField(),
+                          //Confirm Password text field
+                          CustomTextField(),
+                          //Birthdate text field
+                          CustomTextField(),*/
+                          SizedBox(height: 12),
                           Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [

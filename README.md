@@ -9,3 +9,4 @@ hugeicons: ^1.1.6
 flutter_svg: ^2.2.4
 hugeicons: ^1.1.6
 smooth_page_indicator: ^2.0.1
+intl: ^0.20.2
