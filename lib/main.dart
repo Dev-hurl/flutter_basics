@@ -16,7 +16,10 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       //title: 'Learning Flutter Basics',
       home: const DatePickerWidget(),
-      //theme: ,
+      theme: ThemeData.dark(
+        /*primarySwatch: Colors.teal,
+        colorScheme: ColorScheme.fromSeed(seedColor: Colors.tealAccent),*/
+      ),
     );
   }
 }
