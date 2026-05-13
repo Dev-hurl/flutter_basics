@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
 
 class DatePickerWidget extends StatefulWidget {
   const DatePickerWidget({super.key});
@@ -8,14 +9,19 @@ class DatePickerWidget extends StatefulWidget {
 }
 
 class _DatePickerWidgetState extends State<DatePickerWidget> {
-  DateTime _dateTime = DateTime.now();
+
+  DateTime _dateTime = DateTime(
+    DateTime.now().year,
+    DateTime.now().month,
+    DateTime.now().day,
+  );
 
   void datePicker() {
     showDatePicker(
       context: context,
       initialDate: DateTime.now(),
       firstDate: DateTime(1990),
-      lastDate: DateTime(2026),
+      lastDate: DateTime(2100),
       helpText: 'Select Date',
     ).then((dateTime) {
       setState(() {
@@ -32,7 +38,7 @@ class _DatePickerWidgetState extends State<DatePickerWidget> {
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
             Text(
-              '${_dateTime.year}/${_dateTime.month}/${_dateTime.day}',
+              DateFormat('dd MMM yyyy').format(_dateTime),
               style: TextStyle(fontSize: 20, fontWeight: FontWeight.w600),
             ),
             Padding(
