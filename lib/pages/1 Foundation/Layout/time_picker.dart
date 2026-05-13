@@ -15,9 +15,9 @@ class _TimePickerWidgetState extends State<TimePickerWidget> {
       context: context,
       initialTime: TimeOfDay.now(),
       helpText: 'Check time',
-    ).then( (timeOfDay) {
+    ).then( (value) {
       setState(() {
-        _timeOfDay = timeOfDay!;
+        _timeOfDay = value!;
       });
     });
   }
@@ -34,13 +34,16 @@ class _TimePickerWidgetState extends State<TimePickerWidget> {
               fontSize: 20,
               fontWeight: FontWeight.w600
             ),),
-            FilledButton(
-              onPressed: () {
-                timePicker;
-              },
-              child: Text(
-                'Select Time',
-                style: TextStyle(fontWeight: FontWeight.w600),
+            Padding(
+              padding: const EdgeInsets.all(16.0),
+              child: FilledButton(
+                onPressed: () {
+                  timePicker();
+                },
+                child: Text(
+                  'Select Time',
+                  style: TextStyle(fontWeight: FontWeight.w600),
+                ),
               ),
             ),
           ],
