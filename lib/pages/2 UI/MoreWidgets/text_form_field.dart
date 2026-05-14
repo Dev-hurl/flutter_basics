@@ -14,6 +14,7 @@ class _TextFormFieldWidgetState extends State<TextFormFieldWidget> {
   late TextEditingController _emailController;
   late TextEditingController _passwordController;
   late TextEditingController _confirmPasswordController;
+  late TextEditingController _birthdateController;
 
   final formKey = GlobalKey<FormState>();
 
@@ -24,6 +25,7 @@ class _TextFormFieldWidgetState extends State<TextFormFieldWidget> {
     _emailController = TextEditingController();
     _passwordController = TextEditingController();
     _confirmPasswordController = TextEditingController();
+    _birthdateController = TextEditingController();
   }
 
   @override
@@ -32,6 +34,7 @@ class _TextFormFieldWidgetState extends State<TextFormFieldWidget> {
     _emailController.dispose();
     _passwordController.dispose();
     _confirmPasswordController.dispose();
+    _birthdateController.dispose();
     super.dispose();
   }
 
@@ -99,15 +102,33 @@ class _TextFormFieldWidgetState extends State<TextFormFieldWidget> {
                             controller: _nameController,
                             hintText: 'Name',
                             icon: Icons.person,
+                            
                           ),
                           //Email text field
-                          /*CustomTextField(),
+                          CustomTextField(
+                            controller: _emailController,
+                            hintText: 'Email Address',
+                            icon: Icons.mail_rounded,
+                          ),
                           //Password text field
-                          CustomTextField(),
+                          CustomTextField(
+                            controller: _passwordController,
+                            hintText: 'Password',
+                            icon: Icons.lock,
+                          ),
                           //Confirm Password text field
-                          CustomTextField(),
+                          CustomTextField(
+                            controller: _confirmPasswordController,
+                            hintText: 'Confirm Password',
+                            icon: Icons.lock,
+                          ),
                           //Birthdate text field
-                          CustomTextField(),*/
+                          CustomTextField(
+                            controller: _birthdateController,
+                            hintText: 'Select your Birthdate',
+                            icon: Icons.calendar_today_rounded,
+                            readonly: true,
+                          ),
                           SizedBox(height: 12),
                           Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
