@@ -28,17 +28,25 @@ class CustomTextField extends StatelessWidget {
       keyboardType: keyboardType,
       decoration: InputDecoration(
         hintText: hintText,
-        hintStyle: TextStyle(
-          fontSize: 14,
-          color: Colors.grey,
-        ),
+        hintStyle: TextStyle(fontSize: 14, color: Colors.grey),
         prefixIcon: Icon(icon),
+        prefixIconColor: Colors.blueGrey,
+        filled: true,
+        fillColor: Colors.grey,
         enabledBorder: const OutlineInputBorder(
           borderRadius: BorderRadius.all(Radius.circular(12)),
+          borderSide: BorderSide(
+            width: 0.6,
+            color: Colors.white,
+          )
         ),
         focusedBorder: OutlineInputBorder(
           borderRadius: BorderRadius.all(Radius.circular(12)),
-        )
+          borderSide: BorderSide(
+            width: 0.7,
+            color: Colors.deepOrange,
+          )
+        ),
       ),
     );
   }
