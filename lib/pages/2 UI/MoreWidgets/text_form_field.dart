@@ -82,7 +82,7 @@ class _TextFormFieldWidgetState extends State<TextFormFieldWidget> {
                               Text(
                                 'Welcome Back!',
                                 style: TextStyle(
-                                  color: Colors.deepOrange,
+                                  color: Color(0xff464AE5),
                                   fontSize: 24,
                                   fontWeight: FontWeight.w800,
                                 ),
@@ -102,7 +102,6 @@ class _TextFormFieldWidgetState extends State<TextFormFieldWidget> {
                             controller: _nameController,
                             hintText: 'Name',
                             icon: Icons.person,
-                            
                           ),
                           //Email text field
                           CustomTextField(
@@ -127,7 +126,6 @@ class _TextFormFieldWidgetState extends State<TextFormFieldWidget> {
                             controller: _birthdateController,
                             hintText: 'Select your Birthdate',
                             icon: Icons.calendar_today_rounded,
-                            readonly: true,
                           ),
                           SizedBox(height: 12),
                           Row(
@@ -138,7 +136,7 @@ class _TextFormFieldWidgetState extends State<TextFormFieldWidget> {
                                 children: [
                                   Icon(
                                     Icons.check_box,
-                                    color: Colors.deepOrange,
+                                    color: Color(0xff464AE5),
                                   ),
                                   Text(
                                     'Remember me',
@@ -172,7 +170,7 @@ class _TextFormFieldWidgetState extends State<TextFormFieldWidget> {
                                   },
                                   style: ButtonStyle(
                                     backgroundColor: WidgetStatePropertyAll(
-                                      Colors.deepOrange,
+                                      Color(0xff464AE5),
                                     ),
                                   ),
                                   child: Text(
@@ -194,7 +192,7 @@ class _TextFormFieldWidgetState extends State<TextFormFieldWidget> {
                                   style: ButtonStyle(
                                     side: WidgetStatePropertyAll(
                                       BorderSide(
-                                        color: Colors.deepOrange,
+                                        color: Color(0xff464AE5),
                                         width: 2,
                                       ),
                                     ),
@@ -203,7 +201,7 @@ class _TextFormFieldWidgetState extends State<TextFormFieldWidget> {
                                     'Continue as a Guest',
                                     style: TextStyle(
                                       fontWeight: FontWeight.w700,
-                                      color: Colors.deepOrange,
+                                      color: Color(0xff464AE5),
                                     ),
                                   ),
                                 ),

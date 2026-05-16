@@ -13,7 +13,7 @@ class CustomTextField extends StatelessWidget {
     required this.hintText,
     required this.icon,
     required this.controller,
-    this.readonly = false,
+    this.readonly = true,
     this.obscureText = false,
     this.keyboardType = TextInputType.text,
   });
@@ -21,6 +21,7 @@ class CustomTextField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      //readOnly: readonly,
       showCursor: true,
       scrollPhysics: NeverScrollableScrollPhysics(),
       controller: controller,
@@ -28,25 +29,26 @@ class CustomTextField extends StatelessWidget {
       keyboardType: keyboardType,
       decoration: InputDecoration(
         hintText: hintText,
-        hintStyle: TextStyle(fontSize: 14, color: Colors.grey),
+        hintStyle: TextStyle(fontSize: 12, color: Color(0xff808080)),
         prefixIcon: Icon(icon),
-        prefixIconColor: Colors.blueGrey,
+        prefixIconColor: Color(0xff464AE5),
         filled: true,
-        fillColor: Colors.grey,
+        fillColor: Color(0xffEAEAEA),
         enabledBorder: const OutlineInputBorder(
           borderRadius: BorderRadius.all(Radius.circular(12)),
           borderSide: BorderSide(
-            width: 0.6,
-            color: Colors.white,
-          )
+            width: 1,
+            color: Color(0xffF2F2F2),
+          ),
         ),
-        focusedBorder: OutlineInputBorder(
+        focusedBorder: const OutlineInputBorder(
           borderRadius: BorderRadius.all(Radius.circular(12)),
           borderSide: BorderSide(
-            width: 0.7,
-            color: Colors.deepOrange,
-          )
+            width: 1,
+            color: Color(0xff464AE5),
+          ),
         ),
+        
       ),
     );
   }
